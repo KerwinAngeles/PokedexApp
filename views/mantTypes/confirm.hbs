@@ -1,0 +1,14 @@
+<div class="container-delete">
+        <div class="card-confirm_delete">
+          <div class="card-body-delete">
+            <p>Are you sure that you want to delete this type?</p>
+          </div>
+          <div class="buttons">
+            <form action="/confirm-type" method="post">
+                <input type="hidden" value="{{id}}" name="id">
+                <button type="submit" class="btn btn-secondary float-end m-2">Delete</button>
+                <a href="/mantTypes/index" class="btn btn-light float-end m-2">Back</a>
+            </form>
+          </div>
+        </div>
+</div>

@@ -1,0 +1,20 @@
+
+<div class="btn-create">
+  <a href="/mantPokemons/savePokemon" class="btn btn-secondary">Create</a>
+</div>
+<div class="container">
+  {{#each pokemons}}
+        <div class="card">
+          <img class="img-size" src="{{this.photo}}" alt="" />
+          <div class="card-body">
+            <p>-- {{this.name}}</p>
+            <p>-- {{this.region.dataValues.name}}</p>
+            <p>-- {{this.type.dataValues.name}}</p>
+          </div>
+          <div class="buttons">
+            <a href="/mantPokemons/editPokemon/{{this.id}}" class="btn btn-light">Edit</a>
+            <a href="/mantPokemons/confirm/{{this.id}}" class="btn btn-secondary">Delete</a>
+          </div>
+        </div>
+  {{/each}}
+</div>

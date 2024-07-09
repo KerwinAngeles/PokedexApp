@@ -1,0 +1,62 @@
+<div class="form">
+  <h3 class="title-create_pokemon">{{#if editMode}}Edit Pokemon{{else}}Create Pokemon{{/if}}</h3>
+  <form action="/mantPokemons/{{#if editMode}}editPokemon{{else}}savePokemon{{/if}}" method="post" class="form-save">
+    <div class="mb-2">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control name"
+        id="name"
+        name="name"
+        placeholder="Enter a pokemon name"
+        {{#if editMode}} value="{{pokemon.name}}" {{/if}}
+      />
+    </div>
+    <div class="mb-2">
+      <label for="photo">Photo URL</label>
+      <input
+        type="text"
+        class="form-control image"
+        id="photo"
+        name="photo"
+        placeholder="Enter a photo"
+        {{#if editMode}} value="{{pokemon.photo}}" {{/if}}
+      />
+    </div>
+    {{#if editMode}}
+        <input type="hidden" value="{{pokemon.id}}" name="id">
+    {{/if}}
+    <div class="mb-2">
+      <label for="regions">Regions</label>
+      <select name="regions" id="regions" class="form-select f-select">
+        <option value="0">Select a region</option>
+        {{#each regions}}
+             {{#if (equalValue this.id pokemon.regionId)}}
+            <option selected value="{{this.id}}">{{this.name}}</option>
+            {{else}}
+            <option selected value="{{this.id}}">{{this.name}}</option>
+            {{/if}}
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="mb-2">
+      <label for="types">Types</label>
+      <select name="types" id="types" class="form-select f-select">
+        <option value="0">Select a type</option>
+        {{#each types}}
+            {{#if (equalValue this.id pokemon.typeId)}}
+            <option selected value="{{this.id}}">{{this.name}}</option>
+            {{else}}
+            <option selected value="{{this.id}}">{{this.name}}</option>
+            {{/if}}
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="mb-2">
+      <button type="submit" class="btn btn-secondary float-end m-2">Save</button>
+      <a href="/mantPokemons/index" class="btn btn-light float-end m-2">Back</a>
+    </div>
+  </form>
+</div>

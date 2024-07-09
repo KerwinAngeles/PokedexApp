@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/site/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="ul">
+          <li class="nav-item Logo"><img src="/assets/icons/pokeball.png" class="logo" alt="" srcset=""></li>
+          <li class="nav-item home {{#if isActiveHome}}background{{/if}}"><a href="/">Home</a></li>
+          <li class="nav-item pokemons {{#if isActivePokemons}}background{{/if}}"><a href="/mantPokemons/index">Pokemons</a></li>
+          <li class="nav-item regions {{#if isActiveRegions}}background{{/if}}"><a href="/mantRegions/index">Regions</a></li>
+          <li class="nav-item pokemonsTypes {{#if isActiveTypes}}background{{/if}}"><a href="/mantTypes/index">Pokemons Types</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      {{!-- <div class="container-filter">
+        <div class="filter-name">
+          <form action="" method="post" class="form-filter-name">
+            <div>
+              <input type="text" name="name" id="name" class="form-control form-control-sm look-name" placeholder="Enter a pokemon name"/>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-secondary btn-sm btn-filter"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="filter-region">
+          <form action="" method="post" class="form-filter-region">
+            <div>
+              <select name="genre" id="genre" class="form-select form-select-sm look-region">
+                <option value="0">Select an option</option>
+              </select>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-secondary btn-sm btn-filter"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
+          <div class="card-body">
+            <p>name</p>
+            <p>region</p>
+            <p>type</p>
+          </div>
+          <div class="buttons">
+            <a href="" class="btn btn-light">Edit</a>
+            <button type="submit" class="btn btn-secondary">Delete</button>
+          </div>
+        </div>
+
+         <div class="card">
+          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
+          <div class="card-body">
+            <p>name</p>
+            <p>region</p>
+            <p>type</p>
+          </div>
+          <div class="buttons">
+            <a href="" class="btn btn-light">Edit</a>
+            <button type="submit" class="btn btn-secondary">Delete</button>
+          </div>
+        </div>
+
+         <div class="card">
+          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
+          <div class="card-body">
+            <p>name</p>
+            <p>region</p>
+            <p>type</p>
+          </div>
+          <div class="buttons">
+            <a href="" class="btn btn-light">Edit</a>
+            <button type="submit" class="btn btn-secondary">Delete</button>
+          </div>
+        </div>
+         <div class="card">
+          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
+          <div class="card-body">
+            <p>name</p>
+            <p>region</p>
+            <p>type</p>
+          </div>
+          <div class="buttons">
+            <a href="" class="btn btn-light">Edit</a>
+            <button type="submit" class="btn btn-secondary">Delete</button>
+          </div>
+        </div>
+      </div> --}}
+    </main>
+    {{{body}}}
+
+  </body>
+</html>

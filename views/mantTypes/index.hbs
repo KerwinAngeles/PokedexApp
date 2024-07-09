@@ -1,0 +1,16 @@
+<div class="btn-create">
+  <a href="/mantTypes/saveType" class="btn btn-secondary">Create</a>
+</div>
+<div class="container">
+  {{#each types}}
+        <div class="card">
+          <div class="card-body-region">
+            <p>{{this.name}}</p>
+          </div>
+          <div class="buttons">
+            <a href="/mantTypes/editType/{{this.id}}" class="btn btn-light">Edit</a>
+            <a href="/mantTypes/confirm/{{this.id}}" class="btn btn-secondary">Delete</a>
+          </div>
+        </div>
+  {{/each}}
+</div>
