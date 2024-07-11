@@ -13,7 +13,7 @@ const Pokemon = sequelize.define('pokemons', {
         allowNull: false,
     },
     photo: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
     }
 });
