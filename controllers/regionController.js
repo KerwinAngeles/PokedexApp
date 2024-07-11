@@ -6,7 +6,8 @@ const GetAllRegions = ((req, res, next) => {
         res.render('mantRegions/index', {
             pageTitle: 'Regions',
             isActiveRegions: true,
-            regions: region
+            regions: region,
+            validator: true
         });
     }).catch((error) => {
         console.log(error);
@@ -16,7 +17,8 @@ const GetAllRegions = ((req, res, next) => {
 const GetCreateRegion = ((req, res, next) => {
     res.render('mantRegions/saveRegion', {
         pageTitle: 'Create Region',
-        isActiveRegions: true
+        isActiveRegions: true,
+        validator: true
     });
 });
 
@@ -40,7 +42,8 @@ const GetEditRegion = ((req, res, next) => {
             pageTitle: 'Edit Region',
             isActiveRegions: true,
             editMode: true,
-            region: region
+            region: region,
+            validator: true
         });
     }).catch((error) => {
         console.log(error);

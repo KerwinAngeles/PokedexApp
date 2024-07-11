@@ -9,7 +9,8 @@ const GetAllPokemons = ((req, res, next) => {
         res.render('mantPokemons/index', {
             pageTitle: 'Pokemon',
             isActivePokemons: true,
-            pokemons: pokemons
+            pokemons: pokemons,
+            validator: true
         });
     }).catch((error) => {
         console.log(error);
@@ -25,7 +26,8 @@ const GetCreatePokemon =((req, res, next) => {
                 pageTitle: 'Create Pokemon',
                 isActivePokemons: true,
                 regions: regions,
-                types: types
+                types: types,
+                validator: true
             });
         })
     })
@@ -35,7 +37,7 @@ const GetDeleteConfirm = ((req, res, next) => {
     const id = req.params.pokemonId;
     res.render('mantPokemons/confirm', {
         pageTitle: 'Delete',
-        isActiveRegions: true,
+        isActivePokemons: true,
         id: id
     })
 })
@@ -54,11 +56,12 @@ const GetEditPokemon = ((req, res, next) => {
                 const types = resulType.map((result) => result.dataValues);
                 res.render('mantPokemons/savePokemon', {
                     pageTitle: 'Edit Pokemon',
-                    isActiveRegions: true,
+                    isActivePokemons: true,
                     editMode: true,
                     pokemon: pokemon,
                     types,
-                    regions
+                    regions, 
+                    validator: true
                 });
             })
         })

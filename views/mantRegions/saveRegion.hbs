@@ -1,6 +1,6 @@
 <div class="form">
   <h3 class="title-create_region">{{#if editMode}}Edit Region{{else}}Create Region{{/if}}</h3>
-  <form action="/mantRegions/{{#if editMode}}editRegion{{else}}saveRegion{{/if}}" method="post" class="form-save">
+  <form action="/mantRegions/{{#if editMode}}editRegion{{else}}saveRegion{{/if}}" method="post" class="form-save-regions">
     <div class="mb-2">
       <label for="name">Name</label>
       <input
@@ -16,7 +16,7 @@
         <input type="hidden" value="{{region.id}}" name="id">
       {{/if}}
     <div class="mb-2">
-      <button type="submit" class="btn btn-secondary float-end m-2">Save</button>
+      <button type="submit" class="btn btn-secondary float-end m-2 save-region">Save</button>
       <a href="/mantRegions/index" class="btn btn-light float-end m-2">Back</a>
     </div>
   </form>

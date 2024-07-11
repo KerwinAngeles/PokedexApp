@@ -90,7 +90,7 @@ body{
     flex-wrap: wrap;
 }
 .card{
-    width: 230px;
+    width: 250px;
     border: 0px;
     border-radius: 15px;
     background: #FFFFFF;
@@ -116,6 +116,7 @@ body{
     justify-content: start;
     flex-wrap: wrap;
     padding: 0px 10px;
+    margin: 10px;
 }
 
 .card-body-region{
@@ -133,6 +134,7 @@ body{
 
 p{
     margin-bottom: 2px;
+    font-size: 15px;
 }
 
 .buttons{
@@ -145,7 +147,7 @@ p{
 
 .look-name,
 .look-region{
-    width: 200px;
+    width: 250px;
     height: 30px;
 }
 
@@ -178,6 +180,15 @@ p{
     padding: 20px;
 }
 
+.form-save-regions{
+    padding: 20px;
+}
+
+.form-save-types{
+    padding: 20px;
+}
+
+
 .title-create_pokemon,
 .title-create_region,
 .title-create_type{
@@ -197,4 +208,20 @@ p{
 
 .page_no-found{
     font-size: 25px;
+}
+
+.noPokemons{
+    width: 100%;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.validate{
+    border: 3px solid red;
+}
+
+.validate-success{
+    border: 3px solid rgb(8, 176, 8);
 }

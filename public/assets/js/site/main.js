@@ -1,68 +1,86 @@
-// $(document).ready(function() {
-//     $('.delete-serie').on('click', function(e){
-//         e.preventDefault();
-//         if(confirm('Are you sure that you want to delete this movie?')){
-//             $(this).closest('.form-delete').submit();
-//         }
-//     });
+$(document).ready(function() {
 
-//     $('.delete-genre').on('click', function(e){
-//         e.preventDefault();
-//         if(confirm('Are you sure that you want to delete this genre?')){
-//             $(this).closest('.form-delete-genre').submit();
-//         }
-//     });
+    // validate create Pokemon
 
-//     $('.save').on('click', function(e){
-//         e.preventDefault();
-//         const name = $('.name').val();
-//         const image = $('.image').val();
-//         const video = $('.video').val();
-//         const genres = $('.f-select').val();
+    $('.save').on('click', function(e){
+        e.preventDefault();
+        const name = $('.name').val();
+        const photo = $('.photo').val();
+        const region = $('.regions-select').val();
+        const type = $('.types-select').val();
 
-//         if(name === '' || image === '' || video === '' || genres == 0 ){
-//             $('.name').addClass('validate').attr('placeholder', 'you must enter a movie name');
-//             $('.image').addClass('validate').attr('placeholder', 'you must enter a image');
-//             $('.video').addClass('validate').attr('placeholder', 'you must enter a video');
-//             $('.f-select').addClass('validate');
+        if(name === '' || photo === '' || region == 0 || type == 0 ){
+            $('.name').addClass('validate').attr('placeholder', 'you must enter a movie name')
+            $('.photo').addClass('validate').attr('placeholder', 'you must enter a image');
+            $('.regions-select').addClass('validate');
+            $('.types-select').addClass('validate');
 
-//         }else{
-//             $(this).closest('.form-save').submit();
-//         }
-//     });
+        }else{
+            $('.name').addClass('validate-success');
+            $('.photo').addClass('validate-success');
+            $('.regions-select').addClass('validate-success');
+            $('.types-select').addClass('validate-success');
 
-//     $('.save-genre').on('click', function(e){
-//         e.preventDefault();
-//         const name = $('.name').val();
-//         console.log(name);
-//         if(name === ''){
-//             $('.name').addClass('validate').attr('placeholder', 'you must enter a genre');
-//         }else{
-//             $('.name').addClass('validate-success');
-//             $(this).closest('.form-genres').submit();
-//         }
-//     });
+            $(this).closest('.form-save').submit();
 
-//     $('.search-btn').on('click', function(e){
-//         e.preventDefault();
-//         const name = $('.search-name').val();
-//         if(name === ''){
-//             $('.search-name').addClass('validate').attr('placeholder', 'you must enter a name');
-//         }else{
-//             $('.search-name').addClass('validate-success');
-//             $(this).closest('.form-search').submit();
-//         }
-//     });
+        }
+    });
 
-//     $('.genre-btn').on('click', function(e){
-//         e.preventDefault();
-//         const value = $('.genre-select').val();
-//         if(value == 0){
-//             $('.genre-select').addClass('validate').attr('placeholder', 'you must enter a name');
-//         }else{
-//             $('.genre-select').addClass('validate-success');
-//             $(this).closest('.form-search').submit();
-//         }
-//     });
+    // validate Regions
 
-// });
+    $('.save-region').on('click', function(e){
+        e.preventDefault();
+        const name = $('.name').val();
+        console.log(name)
+        if(name === ''){
+            $('.name').addClass('validate').attr('placeholder', 'you must enter a name');
+        }else{
+            $('.name').addClass('validate-success');
+            $(this).closest('.form-save-regions').submit();
+        }
+    });
+
+    // validate Types
+
+    $('.save-type').on('click', function(e){
+        e.preventDefault();
+        const name = $('.name').val();
+        console.log(name)
+        if(name === ''){
+            $('.name').addClass('validate').attr('placeholder', 'you must enter a name');
+        }else{
+            $('.name').addClass('validate-success');
+            $(this).closest('.form-save-types').submit();
+        }
+    });
+
+
+
+    // validate name filter
+
+    $('.btn-filter-name').on('click', function(e){
+        e.preventDefault();
+        const name = $('.name').val();
+        console.log(name)
+        if(name === ''){
+            $('.name').addClass('validate').attr('placeholder', 'you must enter a name');
+        }else{
+            $('.name').addClass('validate-success');
+            $(this).closest('.form-filter-name').submit();
+        }
+    });
+
+    // validate region filter
+
+    $('.btn-filter-region').on('click', function(e){
+        e.preventDefault();
+        const region = $('.region').val();
+        if(region == 0){
+            $('.region').addClass('validate').attr('placeholder', 'you must select a region');
+        }else{
+            $('.region').addClass('validate-success');
+            $(this).closest('.form-filter-region').submit();
+        }
+    });
+
+});

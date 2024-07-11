@@ -1,6 +1,6 @@
 <div class="form">
   <h3 class="title-create_type">{{#if editMode}}Edit Type{{else}}Create Type{{/if}}</h3>
-  <form action="/mantTypes/{{#if editMode}}editType{{else}}saveType{{/if}}" method="post" class="form-save">
+  <form action="/mantTypes/{{#if editMode}}editType{{else}}saveType{{/if}}" method="post" class="form-save-types">
     <div class="mb-2">
       <label for="name">Name</label>
       <input
@@ -16,7 +16,7 @@
         <input type="hidden" value="{{type.id}}" name="id">
       {{/if}}
     <div class="mb-2">
-      <button type="submit" class="btn btn-secondary float-end m-2">Save</button>
+      <button type="submit" class="btn btn-secondary float-end m-2 save-type">Save</button>
       <a href="/mantTypes/index" class="btn btn-light float-end m-2">Back</a>
     </div>
   </form>

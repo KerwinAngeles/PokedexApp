@@ -1,78 +1,62 @@
 <div class="container-filter">
         <div class="filter-name">
-          <form action="" method="post" class="form-filter-name">
+          <form action="/get-pokemon-by-name" method="post" class="form-filter-name">
             <div>
-              <input type="text" name="name" id="name" class="form-control form-control-sm look-name" placeholder="Enter a pokemon name"/>
+              <input type="text" name="name" id="name" class="form-control form-control-sm look-name name" placeholder="Enter a pokemon name"/>
             </div>
             <div>
-              <button type="submit" class="btn btn-secondary btn-sm btn-filter"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
+              <button type="submit" class="btn btn-secondary btn-sm btn-filter btn-filter-name"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
             </div>
           </form>
         </div>
 
         <div class="filter-region">
-          <form action="" method="post" class="form-filter-region">
+          <form action="/get-pokemons-by-regions" method="post" class="form-filter-region">
             <div>
-              <select name="genre" id="genre" class="form-select form-select-sm look-region">
-                <option value="0">Select an option</option>
+              <select name="region" id="region" class="form-select form-select-sm look-region region">
+                <option value="0">Select a region</option>
+                {{#each regions}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
               </select>
             </div>
             <div>
-              <button type="submit" class="btn btn-secondary btn-sm btn-filter"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
+              <button type="submit" class="btn btn-secondary btn-sm btn-filter btn-filter-region"><i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i></button>
             </div>
           </form>
         </div>
       </div>
 
+      {{#if getPokemon}}
       <div class="container">
-        <div class="card">
-          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
-          <div class="card-body">
-            <p>name</p>
-            <p>region</p>
-            <p>type</p>
-          </div>
-          <div class="buttons">
-            <a href="" class="btn btn-light">Edit</a>
-            <button type="submit" class="btn btn-secondary">Delete</button>
-          </div>
-        </div>
-
-         <div class="card">
-          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
-          <div class="card-body">
-            <p>name</p>
-            <p>region</p>
-            <p>type</p>
-          </div>
-          <div class="buttons">
-            <a href="" class="btn btn-light">Edit</a>
-            <button type="submit" class="btn btn-secondary">Delete</button>
-          </div>
-        </div>
-
-         <div class="card">
-          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
-          <div class="card-body">
-            <p>name</p>
-            <p>region</p>
-            <p>type</p>
-          </div>
-          <div class="buttons">
-            <a href="" class="btn btn-light">Edit</a>
-            <button type="submit" class="btn btn-secondary">Delete</button>
-          </div>
-        </div>
-         <div class="card">
-          <img class="img-size" src="https://img.pokemondb.net/sprites/home/normal/2x/pikachu.jpg" alt="" />
-          <div class="card-body">
-            <p>name</p>
-            <p>region</p>
-            <p>type</p>
-          </div>
-          <div class="buttons">
-            <a href="" class="btn btn-light">Edit</a>
-            <button type="submit" class="btn btn-secondary">Delete</button>
-          </div>
-        </div>
+        {{#if hasPokemon}}
+              <div class="card">
+                <img class="img-size" src="{{pokemon.photo}}" alt="" />
+                <div class="card-body">
+                  <p> Name: {{pokemon.name}}</p>
+                  <p> Region: {{pokemon.region.dataValues.name}}</p>
+                  <p> Type: {{pokemon.type.dataValues.name}}</p>
+                </div>
+          {{else}}
+          <h4 class="noPokemons">Pokemon {{pokemonName}} was not found <i class="fa-regular fa-face-sad-tear"></i></h4>
+        {{/if}}
       </div>
+      {{else}}
+        <div class="container">
+          {{#if hasPokemons}}
+            {{#each pokemons}}
+                  <div class="card">
+                    <img class="img-size" src="{{this.photo}}" alt="" />
+                    <div class="card-body">
+                      <p> Name: {{this.name}}</p>
+                      <p> Region: {{this.region.dataValues.name}}</p>
+                      <p> Type: {{this.type.dataValues.name}}</p>
+                    </div>
+                  </div>
+              {{/each}}
+          {{else}}
+              <h4 class="noPokemons">There is not Pokemons <i class="fa-regular fa-face-sad-tear"></i></h4>
+          {{/if}}
+        </div>
+      {{/if}}
+</div>

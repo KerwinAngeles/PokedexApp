@@ -6,7 +6,8 @@ const GetAllTypes = ((req, res, next) => {
         res.render('mantTypes/index', {
             pageTitle: 'Types',
             isActiveTypes: true,
-            types: type
+            types: type,
+            validator: true
         });
     }).catch((error) => {
         console.log(error);
@@ -16,7 +17,8 @@ const GetAllTypes = ((req, res, next) => {
 const GetCreateTypes = ((req, res, next) => {
     res.render('mantTypes/saveType', {
         pageTitle: 'Create Type',
-        isActiveTypes: true
+        isActiveTypes: true,
+        validator: true
     });
 });
 
@@ -40,7 +42,8 @@ const GetEditType = ((req, res, next) => {
             pageTitle: 'Edit Type',
             isActiveTypes: true,
             editMode: true,
-            type: type
+            type: type,
+            validator: true
         });
     }).catch((error) => {
         console.log(error);

@@ -16,7 +16,7 @@
       <label for="photo">Photo URL</label>
       <input
         type="text"
-        class="form-control image"
+        class="form-control photo"
         id="photo"
         name="photo"
         placeholder="Enter a photo"
@@ -28,13 +28,13 @@
     {{/if}}
     <div class="mb-2">
       <label for="regions">Regions</label>
-      <select name="regions" id="regions" class="form-select f-select">
-        <option value="0">Select a region</option>
+      <select name="regions" id="regions" class="form-select f-select regions-select">
+        <option value="0" {{#if editMode}}{{else}}selected{{/if}}>Select a type</option>
         {{#each regions}}
-             {{#if (equalValue this.id pokemon.regionId)}}
+             {{#if (equalValue this.id ../pokemon.regionId)}}
             <option selected value="{{this.id}}">{{this.name}}</option>
             {{else}}
-            <option selected value="{{this.id}}">{{this.name}}</option>
+            <option value="{{this.id}}">{{this.name}}</option>
             {{/if}}
         {{/each}}
       </select>
@@ -42,20 +42,20 @@
 
     <div class="mb-2">
       <label for="types">Types</label>
-      <select name="types" id="types" class="form-select f-select">
-        <option value="0">Select a type</option>
+      <select name="types" id="types" class="form-select f-select types-select">
+        <option value="0" {{#if editMode}}{{else}}selected{{/if}}>Select a type</option>
         {{#each types}}
-            {{#if (equalValue this.id pokemon.typeId)}}
-            <option selected value="{{this.id}}">{{this.name}}</option>
+            {{#if (equalValue this.id ../pokemon.typeId)}}
+              <option selected value="{{this.id}}">{{this.name}}</option>
             {{else}}
-            <option selected value="{{this.id}}">{{this.name}}</option>
-            {{/if}}
+              <option value="{{this.id}}">{{this.name}}</option>
+            {{/if}}            
         {{/each}}
       </select>
     </div>
 
     <div class="mb-2">
-      <button type="submit" class="btn btn-secondary float-end m-2">Save</button>
+      <button type="submit" class="btn btn-secondary float-end m-2 save">Save</button>
       <a href="/mantPokemons/index" class="btn btn-light float-end m-2">Back</a>
     </div>
   </form>
